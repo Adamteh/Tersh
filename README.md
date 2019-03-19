@@ -1,6 +1,9 @@
-# tersh
+# Tersh
 
-A new Flutter application.
+An Online Marketplace for Tertiary Students.
+A flutter Application.
+
+
 
 ## Getting Started
 
