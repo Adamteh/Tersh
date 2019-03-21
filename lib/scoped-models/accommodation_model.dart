@@ -100,7 +100,7 @@ mixin AccommodationModel on ConnectedItemsModel {
     };
     try {
       final http.Response response = await http.post(
-          'https://flutter-buy.firebaseio.com/accommodation.json', //firebase backend url /accommodation.json
+          'https://........json', //firebase backend url /accommodation.json
           body: json.encode(accommodationData));
 
       //successful response codes are 200 and 201
@@ -234,7 +234,7 @@ mixin AccommodationModel on ConnectedItemsModel {
       //put is used to update existing record
       try {
         await http.put(
-            'https://flutter-buy.firebaseio.com/accommodation/${selectedAccommodation.id}.json',
+            'https:/......./${selectedAccommodation.id}.json',
             body: json.encode(updateData));
         loading = false;
         final Item updatedAccommodation = Item(
@@ -283,7 +283,7 @@ mixin AccommodationModel on ConnectedItemsModel {
 
       return http
           .delete(
-              'https://flutter-buy.firebaseio.com/accommodation/$deletedAccommodationId.json')
+              'https://......./$deletedAccommodationId.json')
           .then((http.Response response) {
         Fluttertoast.showToast(msg: "Accommodation Deleted");
         loading = false;
@@ -303,7 +303,7 @@ mixin AccommodationModel on ConnectedItemsModel {
     try {
       return http
           .delete(
-              'https://flutter-buy.firebaseio.com/accommodation/${selectedAccommodation.id}/$imagepath.json')
+              'https:/......./${selectedAccommodation.id}/$imagepath.json')
           .then((http.Response response) {
         Fluttertoast.showToast(msg: "Image Deleted");
 
@@ -324,7 +324,7 @@ mixin AccommodationModel on ConnectedItemsModel {
 
     notifyListeners();
     return http
-        .get('https://flutter-buy.firebaseio.com/accommodation.json')
+        .get('https://.......json')
         .then<Null>((http.Response response) {
       final List<Item> fetchedAccommodationList = [];
       final Map<String, dynamic> accommodationListData =
@@ -377,7 +377,7 @@ mixin AccommodationModel on ConnectedItemsModel {
 
   Future<Null> fetchAccommodationRefreshed() {
     return http
-        .get('https://flutter-buy.firebaseio.com/accommodation.json')
+        .get('https:/........json')
         .then<Null>((http.Response response) {
       final List<Item> fetchedAccommodationList = [];
       final Map<String, dynamic> accommodationListData =
@@ -461,11 +461,11 @@ mixin AccommodationModel on ConnectedItemsModel {
       http.Response response;
       if (newFavoriteStatus) {
         response = await http.put(
-            'https://flutter-buy.firebaseio.com/accommodation/${toggledAccommodation.id}/wishlistUsers/${authenticatedUser.id}.json',
+            'https://......./${toggledAccommodation.id}/wishlistUsers/${authenticatedUser.id}.json',
             body: json.encode(true));
       } else {
         response = await http.delete(
-            'https://flutter-buy.firebaseio.com/accommodation/${toggledAccommodation.id}/wishlistUsers/${authenticatedUser.id}.json');
+            'https:/.......${toggledAccommodation.id}/wishlistUsers/${authenticatedUser.id}.json');
       }
       if (response.statusCode != 200 && response.statusCode != 201) {
         final Item updatedAccommodation = Item(
