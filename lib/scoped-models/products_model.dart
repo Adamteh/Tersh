@@ -108,7 +108,7 @@ mixin ProductsModel on ConnectedItemsModel {
     };
     try {
       final http.Response response = await http.post(
-          'https://flutter-buy.firebaseio.com/products.json', //firebase backend url /products.json
+          'https://.......json', //firebase backend url /products.json
           body: json.encode(productData));
 
       //successful response codes are 200 and 201
@@ -242,7 +242,7 @@ mixin ProductsModel on ConnectedItemsModel {
       //put is used to update existing record
       try {
         await http.put(
-            'https://flutter-buy.firebaseio.com/products/${selectedProduct.id}.json',
+            'https://....../${selectedProduct.id}.json',
             body: json.encode(updateData));
         loading = false;
         final Item updatedProduct = Item(
@@ -291,7 +291,7 @@ mixin ProductsModel on ConnectedItemsModel {
 
       return http
           .delete(
-              'https://flutter-buy.firebaseio.com/products/$deletedProductId.json')
+              'https://..../$deletedProductId.json')
           .then((http.Response response) {
         Fluttertoast.showToast(msg: "Product Deleted");
 
@@ -314,7 +314,7 @@ mixin ProductsModel on ConnectedItemsModel {
     try {
       return http
           .delete(
-              'https://flutter-buy.firebaseio.com/products/${selectedProduct.id}/$imagepath.json')
+              'https://....../${selectedProduct.id}/$imagepath.json')
           .then((http.Response response) {
         Fluttertoast.showToast(msg: "Image Deleted");
         return true; //if successful
@@ -333,7 +333,7 @@ mixin ProductsModel on ConnectedItemsModel {
     loading = true;
     notifyListeners();
     return http
-        .get('https://flutter-buy.firebaseio.com/products.json')
+        .get('https://.......json')
         .then<Null>((http.Response response) {
       final List<Item> fetchedProductList = [];
       final Map<String, dynamic> productListData = json.decode(response.body);
@@ -384,7 +384,7 @@ mixin ProductsModel on ConnectedItemsModel {
 
   Future<Null> fetchProductsRefreshed() {
     return http
-        .get('https://flutter-buy.firebaseio.com/products.json')
+        .get('https://.......json')
         .then<Null>((http.Response response) {
       final List<Item> fetchedProductList = [];
       final Map<String, dynamic> productListData = json.decode(response.body);
@@ -465,11 +465,11 @@ mixin ProductsModel on ConnectedItemsModel {
       http.Response response;
       if (newFavoriteStatus) {
         response = await http.put(
-            'https://flutter-buy.firebaseio.com/products/${toggledProduct.id}/wishlistUsers/${authenticatedUser.id}.json',
+            'https://......./${toggledProduct.id}/wishlistUsers/${authenticatedUser.id}.json',
             body: json.encode(true));
       } else {
         response = await http.delete(
-            'https://flutter-buy.firebaseio.com/products/${toggledProduct.id}/wishlistUsers/${authenticatedUser.id}.json');
+            'https://......./${toggledProduct.id}/wishlistUsers/${authenticatedUser.id}.json');
       }
       if (response.statusCode != 200 && response.statusCode != 201) {
         final Item updatedProduct = Item(
