@@ -98,7 +98,7 @@ mixin InternshipJobModel on ConnectedItemsModel {
     };
     try {
       final http.Response response = await http.post(
-          'https://flutter-buy.firebaseio.com/internshipJobs.json', //firebase backend url /job.json
+          'https://........json', //firebase backend url /job.json
           body: json.encode(jobData));
 
       //successful response codes are 200 and 201
@@ -230,7 +230,7 @@ mixin InternshipJobModel on ConnectedItemsModel {
       //put is used to update existing record
       try {
         await http.put(
-            'https://flutter-buy.firebaseio.com/internshipJobs/${selectedJob.id}.json',
+            'https://......./${selectedJob.id}.json',
             body: json.encode(updateData));
         loading = false;
         final Item updateJob = Item(
@@ -279,7 +279,7 @@ mixin InternshipJobModel on ConnectedItemsModel {
 
       return http
           .delete(
-              'https://flutter-buy.firebaseio.com/internshipJobs/$deletedJobId.json')
+              'https://......./$deletedJobId.json')
           .then((http.Response response) {
         Fluttertoast.showToast(msg: "Internship/Job Deleted");
         loading = false;
@@ -299,7 +299,7 @@ mixin InternshipJobModel on ConnectedItemsModel {
     try {
       return http
           .delete(
-              'https://flutter-buy.firebaseio.com/internshipJobs/${selectedJob.id}/$imagepath.json')
+              'https:/......./${selectedJob.id}/$imagepath.json')
           .then((http.Response response) {
         Fluttertoast.showToast(msg: "Image Deleted");
 
@@ -319,7 +319,7 @@ mixin InternshipJobModel on ConnectedItemsModel {
     loading = true;
     notifyListeners();
     return http
-        .get('https://flutter-buy.firebaseio.com/internshipJobs.json')
+        .get('https:/........json')
         .then<Null>((http.Response response) {
       final List<Item> fetchedJobList = [];
       final Map<String, dynamic> jobListData = json.decode(response.body);
@@ -370,7 +370,7 @@ mixin InternshipJobModel on ConnectedItemsModel {
 
   Future<Null> fetchJobRefreshed() {
     return http
-        .get('https://flutter-buy.firebaseio.com/internshipJobs.json')
+        .get('https://........json')
         .then<Null>((http.Response response) {
       final List<Item> fetchedJobList = [];
       final Map<String, dynamic> jobListData = json.decode(response.body);
@@ -451,11 +451,11 @@ mixin InternshipJobModel on ConnectedItemsModel {
       http.Response response;
       if (newFavoriteStatus) {
         response = await http.put(
-            'https://flutter-buy.firebaseio.com/internshipJobs/${toggledJob.id}/wishlistUsers/${authenticatedUser.id}.json',
+            'https://......./${toggledJob.id}/wishlistUsers/${authenticatedUser.id}.json',
             body: json.encode(true));
       } else {
         response = await http.delete(
-            'https://flutter-buy.firebaseio.com/internshipJobs/${toggledJob.id}/wishlistUsers/${authenticatedUser.id}.json');
+            'https:/......./${toggledJob.id}/wishlistUsers/${authenticatedUser.id}.json');
       }
       if (response.statusCode != 200 && response.statusCode != 201) {
         final Item updateJob = Item(
