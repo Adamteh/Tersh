@@ -97,7 +97,7 @@ mixin EventsModel on ConnectedItemsModel {
     };
     try {
       final http.Response response = await http.post(
-          'https://flutter-buy.firebaseio.com/events.json', //firebase backend url /events.json
+          'https:/........json', //firebase backend url /events.json
           body: json.encode(eventsData));
 
       //successful response codes are 200 and 201
@@ -229,7 +229,7 @@ mixin EventsModel on ConnectedItemsModel {
       //put is used to update existing record
       try {
         await http.put(
-            'https://flutter-buy.firebaseio.com/events/${selectedEvent.id}.json',
+            'https:/......./${selectedEvent.id}.json',
             body: json.encode(updateData));
         loading = false;
         final Item updatedEvent = Item(
@@ -278,7 +278,7 @@ mixin EventsModel on ConnectedItemsModel {
 
       return http
           .delete(
-              'https://flutter-buy.firebaseio.com/events/$deletedEventId.json')
+              'https://......./$deletedEventId.json')
           .then((http.Response response) {
         Fluttertoast.showToast(msg: "Event Deleted");
         loading = false;
@@ -298,7 +298,7 @@ mixin EventsModel on ConnectedItemsModel {
     try {
       return http
           .delete(
-              'https://flutter-buy.firebaseio.com/events/${selectedEvent.id}/$imagepath.json')
+              'https:/......./${selectedEvent.id}/$imagepath.json')
           .then((http.Response response) {
         Fluttertoast.showToast(msg: "Image Deleted");
 
@@ -318,7 +318,7 @@ mixin EventsModel on ConnectedItemsModel {
     loading = true;
     notifyListeners();
     return http
-        .get('https://flutter-buy.firebaseio.com/events.json')
+        .get('https://........json')
         .then<Null>((http.Response response) {
       final List<Item> fetchedEventList = [];
       final Map<String, dynamic> eventsListData = json.decode(response.body);
@@ -369,7 +369,7 @@ mixin EventsModel on ConnectedItemsModel {
 
   Future<Null> fetchEventRefreshed() {
     return http
-        .get('https://flutter-buy.firebaseio.com/events.json')
+        .get('https:/........json')
         .then<Null>((http.Response response) {
       final List<Item> fetchedEventList = [];
       final Map<String, dynamic> eventsListData = json.decode(response.body);
@@ -450,11 +450,11 @@ mixin EventsModel on ConnectedItemsModel {
       http.Response response;
       if (newFavoriteStatus) {
         response = await http.put(
-            'https://flutter-buy.firebaseio.com/events/${toggledEvent.id}/wishlistUsers/${authenticatedUser.id}.json',
+            'https:/......./${toggledEvent.id}/wishlistUsers/${authenticatedUser.id}.json',
             body: json.encode(true));
       } else {
         response = await http.delete(
-            'https://flutter-buy.firebaseio.com/events/${toggledEvent.id}/wishlistUsers/${authenticatedUser.id}.json');
+            'https:/......./${toggledEvent.id}/wishlistUsers/${authenticatedUser.id}.json');
       }
       if (response.statusCode != 200 && response.statusCode != 201) {
         final Item updatedEvent = Item(
