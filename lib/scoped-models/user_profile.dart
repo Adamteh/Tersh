@@ -38,7 +38,7 @@ mixin UserProfileModel on ConnectedItemsModel {
     final imageUploadRequest = http.MultipartRequest(
         'POST',
         Uri.parse(
-            'https://us-central1-flutter-buy.cloudfunctions.net/storeProfileImage'));
+            'https://.......'));
     final file = await http.MultipartFile.fromPath(
       'image',
       image.path,
@@ -80,7 +80,7 @@ mixin UserProfileModel on ConnectedItemsModel {
     if (mode == AuthMode.Signup) {
       try {
         final http.Response response = await http.put(
-            'https://flutter-buy.firebaseio.com/Users/UserNames/${authenticatedUser.id}.json', //firebase backend url /products.json
+            'https://......./${authenticatedUser.id}.json', //firebase backend url /products.json
             body: json.encode(newUserData));
 
         //successful response codes are 200 and 201
@@ -128,7 +128,7 @@ mixin UserProfileModel on ConnectedItemsModel {
 
     try {
       final http.Response response = await http.put(
-          'https://flutter-buy.firebaseio.com/Users/UserPhotos/${authenticatedUser.id}.json', //firebase backend url /products.json
+          'https://......./${authenticatedUser.id}.json', //firebase backend url /products.json
           body: json.encode(newUserPhoto));
 
       //successful response codes are 200 and 201
@@ -160,7 +160,7 @@ mixin UserProfileModel on ConnectedItemsModel {
 
       return http
           .delete(
-              'https://flutter-buy.firebaseio.com/Users/UserPhotos/${authenticatedUser.id}.json')
+              'https://......./${authenticatedUser.id}.json')
           .then((http.Response response) {
         Fluttertoast.showToast(
           msg: "Profile Photo Deleted",
@@ -189,7 +189,7 @@ mixin UserProfileModel on ConnectedItemsModel {
 
     try {
       final http.Response response = await http.put(
-          'https://flutter-buy.firebaseio.com/Users/UserNames/${authenticatedUser.id}.json', //firebase backend url /products.json
+          'https://......./${authenticatedUser.id}.json', //firebase backend url /products.json
           body: json.encode(newUserData));
 
       //successful response codes are 200 and 201
@@ -218,7 +218,7 @@ mixin UserProfileModel on ConnectedItemsModel {
   Future<Null> fetchNewUser() {
     return http
         .get(
-            'https://flutter-buy.firebaseio.com/Users/UserNames/${authenticatedUser.id}.json')
+            'https://......./${authenticatedUser.id}.json')
         .then<Null>((http.Response response) {
       UsersData fetchedUserData;
       final Map<String, dynamic> usersListData = json.decode(response.body);
@@ -241,7 +241,7 @@ mixin UserProfileModel on ConnectedItemsModel {
   Future<Null> fetchUserPhoto() {
     return http
         .get(
-            'https://flutter-buy.firebaseio.com/Users/UserPhotos/${authenticatedUser.id}.json')
+            'https://......./${authenticatedUser.id}.json')
         .then<Null>((http.Response response) {
       UsersPhoto fetchedUserData;
       final Map<String, dynamic> usersListData = json.decode(response.body);
@@ -264,7 +264,7 @@ mixin UserProfileModel on ConnectedItemsModel {
 //fetch all users details
   Future<Null> fetchUsers() {
     return http
-        .get('https://flutter-buy.firebaseio.com/Users/UserNames/.json')
+        .get('https:/......./.json')
         .then<Null>((http.Response response) {
       final List<UsersData> fetchedUserData = [];
 
@@ -289,7 +289,7 @@ mixin UserProfileModel on ConnectedItemsModel {
 
   Future<Null> fetchUsersPhoto() {
     return http
-        .get('https://flutter-buy.firebaseio.com/Users/UserPhotos/.json')
+        .get('https://......./.json')
         .then<Null>((http.Response response) {
       final List<UsersPhoto> fetchedUserData = [];
       final Map<String, dynamic> usersListData = json.decode(response.body);
