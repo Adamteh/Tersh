@@ -32,7 +32,7 @@ mixin AgentModel on ConnectedItemsModel {
     final imageUploadRequest = http.MultipartRequest(
         'POST',
         Uri.parse(
-            'https://us-central1-flutter-buy.cloudfunctions.net/storeAgentImage'));
+            'https://us-central1-.......'));
     final file = await http.MultipartFile.fromPath(
       'image',
       image.path,
@@ -110,7 +110,7 @@ mixin AgentModel on ConnectedItemsModel {
 
     try {
       final http.Response response = await http.put(
-          'https://flutter-buy.firebaseio.com/Agents/${authenticatedUser.id}.json', //firebase backend url /products.json
+          'https:/......./${authenticatedUser.id}.json', //firebase backend url /products.json
           body: json.encode(agentData));
 
       //successful response codes are 200 and 201
@@ -150,7 +150,7 @@ mixin AgentModel on ConnectedItemsModel {
   Future<Null> fetchAgent() {
     return http
         .get(
-            'https://flutter-buy.firebaseio.com/Agents/${authenticatedUser.id}/.json')
+            'https://......./${authenticatedUser.id}/.json')
         .then<Null>((http.Response response) {
       Agent fetchedAgentData;
       final Map<String, dynamic> _agentData = json.decode(response.body);
@@ -172,7 +172,7 @@ mixin AgentModel on ConnectedItemsModel {
 
   Future<Null> fetchAgents() {
     return http
-        .get('https://flutter-buy.firebaseio.com/Agents/.json')
+        .get('https://......./.json')
         .then<Null>((http.Response response) {
       final List<Agent> fetchedAgentData = [];
       final Map<String, dynamic> _agentsListData = json.decode(response.body);
