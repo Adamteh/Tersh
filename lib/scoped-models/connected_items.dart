@@ -30,7 +30,7 @@ mixin ConnectedItemsModel on Model {
     final imageUploadRequest = http.MultipartRequest(
         'POST',
         Uri.parse(
-            'https://us-central1-flutter-buy.cloudfunctions.net/storeImage'));
+            'https://us-central1-.........'));
     final file = await http.MultipartFile.fromPath(
       'image',
       image.path,
@@ -87,13 +87,13 @@ mixin UserModel on ConnectedItemsModel {
     http.Response response;
     if (mode == AuthMode.Login) {
       response = await http.post(
-        'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyB-YdS_0ucETH_2rbkgz1L6oqHFOiemGqQ',
+        'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=.......',
         body: json.encode(authData),
         headers: {'Content-Type': 'application/json'},
       );
     } else {
       response = await http.post(
-        'https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyB-YdS_0ucETH_2rbkgz1L6oqHFOiemGqQ',
+        'https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=..........',
         body: json.encode(authData),
         headers: {'Content-Type': 'application/json'},
       );
