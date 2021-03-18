@@ -1,7 +1,7 @@
 # Tersh
 
 **An Online Marketplace for Tertiary Students.**
-A flutter Application.
+*A flutter Application*.
 
 
 ![ScreenShot 1](https://github.com/Adamteh/Tersh/blob/master/assets/screenshots/Screenshot_20210318-164045.jpg?raw=true)
