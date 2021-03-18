@@ -1,19 +1,19 @@
 # Tersh
 
-An Online Marketplace for Tertiary Students.
+**An Online Marketplace for Tertiary Students.**
 A flutter Application.
 
 
+![ScreenShot 1](https://github.com/Adamteh/Tersh/blob/master/assets/screenshots/Screenshot_20210318-164045.jpg?raw=true)
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+![ScreenShot 2](https://github.com/Adamteh/Tersh/blob/master/assets/screenshots/Screenshot_20210318-164109.jpg?raw=true)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
+![ScreenShot 3](https://github.com/Adamteh/Tersh/blob/master/assets/screenshots/Screenshot_20210318-164203.jpg?raw=true)
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+
+![ScreenShot 4](https://github.com/Adamteh/Tersh/blob/master/assets/screenshots/Screenshot_20210318-164229.jpg?raw=true)
+
+
+![ScreenShot 5](https://github.com/Adamteh/Tersh/blob/master/assets/screenshots/Screenshot_20210318-164236.jpg)
